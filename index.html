@@ -7,12 +7,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Brawler&family=Yeseva+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href= "styles.css"> 
+  <link rel="stylesheet" href= "test.css"> 
   <title>Document</title>
 </head>
 <body id="body">
   <header id= "logo" >Ankita M</header>
   <h2 id="body_header" > Let's play noughts and crosses! </h2>
+  <form id="form"> 
+    <label>Player 1</label>
+    <input class= "inputs" id= "input1" input="text" placeholder= "Enter your name here" required>
+    <label>Player 2</label>
+    <input  id= "input2" class= "inputs"input= "text" placeholder="Enter your name here" required> 
+    <button type="submit" class="submit"> Submit </button>
+
+  </form>
   <div id="div_game">
     <div data-cell-index="0" class="cell" id="zero"></div>
     
@@ -33,6 +41,8 @@
     <div data-cell-index="8" class="cell" id="eightbox"></div>
     
   </div>
+
+  <script src="index.js"></script>
   
 </body>
 </html>
