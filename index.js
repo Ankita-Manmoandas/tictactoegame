@@ -6,7 +6,7 @@
   let player2;
 
   //handlheclick 
-  const handleClick (event) => {
+  const handleClick = (event) => {
      cells.innerHTML = "X"
   }
 
