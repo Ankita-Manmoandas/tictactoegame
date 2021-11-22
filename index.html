@@ -11,36 +11,53 @@
   <title>Document</title>
 </head>
 <body id="body">
+  <video autoplay muted loop id="video"> 
+    <source src= "36118f51b3e8acfebb063c116ca3676c.mp4" type="video/mp4"> 
+  </video>
+  <div id="first_section">
+  <h1 id="header">Let's play noughts and crosses</h1>
+    <button id="body_button"> 
+      <a href="#section_game"> Click to play</a>
+      </button>
+  </div>
+  <section id="section_game"> 
   <header id= "logo" >Ankita M</header>
-  <h2 id="body_header" > Let's play noughts and crosses! </h2>
-  <form id="form"> 
+  <h2 id="body_header" >  </h2>
+  <form id="form__game"> 
+    
     <label>Player 1</label>
     <input class= "inputs" id= "input1" input="text" placeholder= "Enter your name here" required>
     <label>Player 2</label>
     <input  id= "input2" class= "inputs"input= "text" placeholder="Enter your name here" required> 
+   
     <button type="submit" class="submit"> Submit </button>
 
   </form>
   <div id="div_game">
-    <div data-cell-index="0" class="cell" id="zero"></div>
+    <div data-cell-index="0" class="cell winningPattern1" id="zero"> </div>
     
-    <div data-cell-index="1" class="cell" id="firstbox"></div>
+    <div data-cell-index="1" class="cell winningPattern1" id="firstbox"> </div>
     
-    <div data-cell-index="2" class="cell" id="secondbox"></div>
+    <div data-cell-index="2" class="cell winningPattern1" id="secondbox"></div>
     
-    <div data-cell-index="3" class="cell" id="thirdbox"></div>
+    <div data-cell-index="3" class="cell winningPattern2" id="thirdbox"></div>
     
-    <div data-cell-index="4" class="cell" id="fourthbox"></div>
+    <div data-cell-index="4" class="cell winningPattern2" id="fourthbox"></div>
     
-    <div data-cell-index="5" class="cell" id="fifthbox"></div>
+    <div data-cell-index="5" class="cell winningPattern2" id="fifthbox"></div>
     
-    <div data-cell-index="6" class="cell" id="sixthbox"></div>
+    <div data-cell-index="6" class="cell winningPattern3" id="sixthbox"></div>
     
-    <div data-cell-index="7" class="cell" id="sevenbox"></div>
+    <div data-cell-index="7" class="cell winningPattern3" id="sevenbox"></div>
 
-    <div data-cell-index="8" class="cell" id="eightbox"></div>
+    <div data-cell-index="8" class="cell winningPattern3" id="eightbox"></div>
     
   </div>
+  <button id="reset-button">
+    Reset
+  
+  </button>
+</section>
 
   <script src="index.js"></script>
   
