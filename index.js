@@ -62,11 +62,11 @@ cells.forEach((cell) => {
       e.target.innerHTML = "O"
       player1Turn = true;
     }
-    
     // Time to check for a win by calling the checkForWin function :) 
     // const checkResult = ()=> {
     //   if (
-        checkForWin1ax(),
+      const checkWinner = () => {
+      checkForWin1ax(),
       checkForWin1bx (),
       checkForWin1cx (),
       checkForWin2ax (),
@@ -74,6 +74,13 @@ cells.forEach((cell) => {
       checkForWin2cx (),
       checkForWin3ax (),
       checkForWin3bx ()
+       }
+
+       checkWinner ()
+      
+
+
+  
   // { 
   //   alert ("game over")
   // }
@@ -84,7 +91,17 @@ cells.forEach((cell) => {
   // }
 
   // checkResult ()
-});
+  }
+  ); 
+
+  // const checkForDraw = () => {
+  //   cells.forEach (drawFunction)
+
+  //   function drawFunction (cells) {
+  //     if (cells.length=== 9) {
+  //       alert ("its a draw")
+  //     }
+  //   }
 
 //horizontal wins starting from 1a-1c for player 1 (x) only 
 const checkForWin1ax = () => {
@@ -203,29 +220,25 @@ const checkForWin1ax = () => {
    alert("player 2 wins") }
   }} ) 
 
-//check for draw
+// // check for draw
 // checkForDraw= () => {
-//   const pattern0 = cells[0].innerHTML;
-//   const pattern1 = cells[1].innerHTML;
-//   const pattern2 = cells[2].innerHTML;
-
-  
+//   if (cells== "x" || "o" &&)
 
 
-// }
+
 
 
   //reset button
-  // let handleClickReset = (e) => {
-  //   cells.forEach () (resetFunction)
+  let handleClickReset = () => {
+    cells.forEach (resetFunction)
 
-  //   function resetFunction (cells)  {
-  //     cells.innerHTML= " "
-  //   }
+    function resetFunction (cells)  {
+      cells.innerHTML= ("")
+    }
     
     
-  // }
-  // resetButton.addEventListener("click", handleClickReset); 
+  }
+  resetButton.addEventListener("click", handleClickReset); 
 
 
 
