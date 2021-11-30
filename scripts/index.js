@@ -5,7 +5,6 @@ let player1Turn = true;
 let form = document.querySelector("#form__game")
 let cells = document.querySelectorAll(".cell")
 const submitButton = document.querySelector(".submit")
-
 const inputForm = document.querySelectorAll(".inputs")
 let input1 = document.querySelector("#input1")
 let input2 = document.querySelector("#input2")
@@ -29,30 +28,9 @@ if (player1= input1.value || (player2 = input2.value)) {
   alert("Please write your names to start the game")
 
 }} 
-
-
  submitButton.addEventListener ("click" , handleClick);
 
-
-
-//toggle to show which player's turn it is AND LINK IT TO THE CONDITION 
-// let symbol= "x"
-
-// const toggle = () => {
-//   if (symbol== "x") {
-//     form.innerHTML= `${player1}'s turn'`
-//   } else {
-//     symbol= "0"
-//     form.innerHTML= `${player2}'s turn'`
-
-// //   }
-// }
-
-
-
 // when player 1 clicks - x appears , when player 2 clicks 0 appears - and it shows on form.inner html that its player 1's turn
-
-
 cells.forEach((cell) => {
   cell.addEventListener("click", (e) => {
     if (player1Turn) {
@@ -63,7 +41,7 @@ cells.forEach((cell) => {
       player1Turn = true;
     }
     // Time to check for a win by calling the checkForWin function :) 
-    // const checkResult = ()=> {
+    // const checkResult = () => {
     //   if (
       const checkWinner = () => {
       checkForWin1ax(),
@@ -75,33 +53,9 @@ cells.forEach((cell) => {
       checkForWin3ax (),
       checkForWin3bx ()
        }
-
        checkWinner ()
-      
-
-
-  
-  // { 
-  //   alert ("game over")
-  // }
-  // else {
-  //   alert ("its a draw")
-  // }
-
-  // }
-
-  // checkResult ()
   }
   ); 
-
-  // const checkForDraw = () => {
-  //   cells.forEach (drawFunction)
-
-  //   function drawFunction (cells) {
-  //     if (cells.length=== 9) {
-  //       alert ("its a draw")
-  //     }
-  //   }
 
 //horizontal wins starting from 1a-1c for player 1 (x) only 
 const checkForWin1ax = () => {
@@ -111,20 +65,12 @@ const checkForWin1ax = () => {
   
  if (pattern0=="x" && pattern1=="x" && pattern2== "x")  {
    alert ("player 1 wins") ;
-  //  form.innerHTML= ""; 
-
-
-   
-   
-      
+  //  form.innerHTML= "";    
   } else if (pattern0=="O" && pattern1=="O" && pattern2== "O")  {
     console.log ("player 2 wins") 
-
-  
  }}
 
  const checkForWin1bx = () => {
-
   const pattern3 = cells[3].innerHTML;
   const pattern4 = cells[4].innerHTML;
   const pattern5 = cells[5].innerHTML;
@@ -138,7 +84,6 @@ const checkForWin1ax = () => {
  }
 
  const checkForWin1cx = () => {
-
   const pattern6 = cells[6].innerHTML;
   const pattern7 = cells[7].innerHTML;
   const pattern8 = cells[8].innerHTML;
