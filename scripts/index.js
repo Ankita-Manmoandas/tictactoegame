@@ -33,42 +33,65 @@ if (player1= input1.value || (player2 = input2.value)) {
 // when player 1 clicks - x appears , when player 2 clicks 0 appears - and it shows on form.inner html that its player 1's turn
 cells.forEach((cell) => {
   cell.addEventListener("click", (e) => {
-    if (player1Turn) {
-      e.target.innerHTML = "x"
-      player1Turn = false;
-    } else {
-      e.target.innerHTML = "O"
-      player1Turn = true;
-    }
+    if (e.target.innerHTML === "") {
+        if (player1Turn) {
+          e.target.innerHTML = "x"
+          player1Turn = false;
+        } else {
+          e.target.innerHTML = "O"
+          player1Turn = true;
+        
+        }
+        
+      }
+
+  
     // Time to check for a win by calling the checkForWin function :) 
     // const checkResult = () => {
     //   if (
-      const checkWinner = () => {
-      checkForWin1ax(),
-      checkForWin1bx (),
-      checkForWin1cx (),
-      checkForWin2ax (),
-      checkForWin2bx (),
-      checkForWin2cx (),
-      checkForWin3ax (),
-      checkForWin3bx ()
-       }
-       checkWinner ()
-  }
-  ); 
+    //     const checkWinner = () => {
+    //     checkForWin1ax(),
+    //     checkForWin1bx (),
+    //     checkForWin1cx (),
+    //     checkForWin2ax (),
+    //     checkForWin2bx (),
+    //     checkForWin2cx (),
+    //     checkForWin3ax (),
+    //     checkForWin3bx ()
+    //     }
+    //     checkWinner ()
+    checkForWin (cells[0], cells[1], cells[2]),
+    checkForWin (cells[3], cells[4], cells[5])
+    
+  });
 
-//horizontal wins starting from 1a-1c for player 1 (x) only 
-const checkForWin1ax = () => {
- const pattern0 = cells[0].innerHTML;
- const pattern1 = cells[1].innerHTML;
- const pattern2 = cells[2].innerHTML;
   
- if (pattern0=="x" && pattern1=="x" && pattern2== "x")  {
-   alert ("player 1 wins") ;
-  //  form.innerHTML= "";    
-  } else if (pattern0=="O" && pattern1=="O" && pattern2== "O")  {
-    console.log ("player 2 wins") 
- }}
+   
+
+//winning patterns
+checkForWin = (pattern0, pattern1, pattern2) => {
+  if (pattern0=="x" && pattern1=="x" && pattern2== "x")  {
+    alert ("player 1 wins") ;
+   //  form.innerHTML= "";    
+   } else if (pattern0=="O" && pattern1=="O" && pattern2== "O")  {
+     console.log ("player 2 wins") 
+  }}
+  
+
+
+
+// //horizontal wins starting from 1a-1c for player 1 (x) only 
+// const checkForWin1ax = () => {
+//  const pattern0 = cells[0].innerHTML;
+//  const pattern1 = cells[1].innerHTML;
+//  const pattern2 = cells[2].innerHTML;
+  
+//  if (pattern0=="x" && pattern1=="x" && pattern2== "x")  {
+//    alert ("player 1 wins") ;
+//   //  form.innerHTML= "";    
+//   } else if (pattern0=="O" && pattern1=="O" && pattern2== "O")  {
+//     console.log ("player 2 wins") 
+//  }}
 
  const checkForWin1bx = () => {
   const pattern3 = cells[3].innerHTML;
@@ -163,8 +186,7 @@ const checkForWin1ax = () => {
    }
    else if (pattern2=="O" && pattern4=="O" && pattern6== "O")  {
    alert("player 2 wins") }
-  }} ) 
-
+  }})
 // // check for draw
 // checkForDraw= () => {
 //   if (cells== "x" || "o" &&)
@@ -184,56 +206,3 @@ const checkForWin1ax = () => {
     
   }
   resetButton.addEventListener("click", handleClickReset); 
-
-
-
-
-  // 1. Find all the divs via querySelectorAll (convert to array?)
-  // const cellsArr = Array.from(cells);
-  // console.log(cells)
-  // let filterO= cellsArr.filter ((cell) => cell.innerHTML=="O"); 
-  // console.log (filterO)
-
-
-
-  
-
-  // let checkO = (cells) => {
-  //   if (cells.innerHTML = "O") {
-  //     // return "O"
-
-  //   } else {
-  //     return "x"
-  //   }
-  //   cellsArr.filter(checkO)
-   
-  
-
-  // 2. Challenge: Find all the divs with a 0
-
-  // 3. Challenge: Find all the divs with a X
-
-
-
-// 3. Is it a horizontal win? Yes/No- returns a boolean? 
-//    ...... ??? 123? 456? 789?
-// const checkHorizontalWin = (divsO, divsX) => {
-//   if (divsO) {
-//     alert("player 2 has won!")
-//   } else {
-//     alert("keep playing!")
-//   }
-// }
-
-// }
-// 4. Is it a vertical win? Yes/No
-// 5. Is it a diagonal win? yes/No
-
-
-  // winning patterns
-//   let checkForPattern1 = (player1Turn) => {
-//     if (player1Turn && (winningPattern1= e.target.innerHTML="x")){
-//     alert( "player 1 has won")
-
-//   } else {
-//     alert("keep playing!")
