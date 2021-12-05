@@ -10,33 +10,32 @@
   <link rel="stylesheet" href= "test.css"> 
   <title>noughts and crosses</title>
 </head>
-<body id="body">
-  <video autoplay muted loop id="video"> 
+<body class="page">
+  <video autoplay muted loop class="page__video"> 
     <source src= "assests/media/Background-video.mp4" type="video/mp4"> 
   </video>
-  <div id="first_section">
-  <h1 id="header">Let's play noughts and crosses</h1>
-    <button id="body_button"> 
-      <a href="#section_game"> Click to play</a>
+  <div class="welcome-section">
+  <h1 class="welcome__header">Let's play noughts and crosses</h1>
+    <button class="welcome__button"> 
+       <a  href= "#game-section" class="welcone-header__CTA"> Click to play </a>
       </button>
   </div>
-  <section id="section_game"> 
-  <header id= "logo" >Ankita M</header>
-  <h2 id="body_header" >  </h2>
-  <form id="form__game"> 
+  <section class="game" id="game-section"> 
+  <header class= "game__logo" >Ankita M</header>
+  <h2 class="game__header" >  </h2>
+  <form class="form"> 
     
     <label>Player 1</label>
-    <input class= "inputs" id= "input1" input="text" placeholder= "Enter your name here" required>
+    <input class= "form__input-player1 form__inputs" input="text" placeholder= "Enter your name here" required>
     <label>Player 2</label>
-    <input  id= "input2" class= "inputs"input= "text" placeholder="Enter your name here" required> 
-   
-    <button type="submit" class="submit"> Submit </button>
-
+    <input  class= "form__input-player2 form__inputs" input= "text" placeholder="Enter your name here" required> 
+    <button class="form__submit"> Submit </button>
   </form>
-  <div id="div_game">
-    <div class="cell" id="zero"> </div>
+
+  <div class="game-screen">
+    <div class="cell" id="zero"></div>
     
-    <div class="cell" id="firstbox"> </div>
+    <div class="cell" id="firstbox"></div>
     
     <div class="cell" id="secondbox"></div>
     
@@ -53,7 +52,7 @@
     <div class="cell" id="eightbox"></div>
     
   </div>
-  <button id="reset-button">
+  <button class="game__reset-button">
     Reset
   
   </button>
