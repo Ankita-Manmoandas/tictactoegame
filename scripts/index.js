@@ -8,46 +8,60 @@ let form = document.querySelector("form")
 let cells = document.querySelectorAll(".cell")
 const submitButton = document.querySelector(".form__submit")
 const inputForm = document.querySelectorAll(".form__inputs")
-let input1 = document.querySelector("form__input-player1")
-let input2 = document.querySelector("form__input-player2")
+let input1 = document.querySelector(".form__input-player1")
+let input2 = document.querySelector(".form__input-player2")
 const winningPattern1 = document.querySelectorAll(".winningPattern1")
 const dataCell = document.querySelectorAll("data-cell-index")
 const resetButton= document.querySelector(".game__reset-button")
 let gameDiv = document.querySelector(".game__screen")
-
+ 
 //players can enter their names
 // when players submit their names- form is replaced with hi player1 and player 2 name. 
 const handleClick = (e) => {
-  player1 = input1.value
-  player2 = input2.value
-  console.log (input1)  
-if (player1= input1.value && (player2 = input2.value)) {
-  form.innerHTML = `It's so nice to meet you ${player1} and ${player2}.  
+
+ player1= input1.value;
+ player2= input2.value;
+
+if (player1 !=="" && (player2!== "")) {
+  form.innerHTML=`Hello ${player1} and ${player2}!! 
   <br>
   ${player1} you're crosses and you'll go first. 
   <br> ${player2} you're noughts.` 
-} else  {
-  alert("Please write your names to start the game")
+} else {
+  alert ("Please write your names to start the game")
 
 }} 
+
  submitButton.addEventListener ("click" , handleClick);
 
 // when player 1 clicks - x appears , when player 2 clicks 0 appears - and it shows on form.inner html that its player 1's turn
 cells.forEach((cell) => {
   cell.addEventListener("click", (e) => {
     console.log(cell)
-    if (e.target.innerHTML === "") {
+    if (input1.value=="" && (input2.value=="")) {    
+      alert( "Please write your names to start the game")
+      return
+    }
+    if (e.target.innerHTML === "" ) 
+       {
         if (player1Turn) {
+          form.innerHTML = `${player1}'s turn`
           e.target.innerHTML = "x"
           player1Turn = false;
-        } else {
+        } else if (player1Turn!== true) {
+          form.innerHTML = `${player2}'s turn`
           e.target.innerHTML = "O"
           player1Turn = true;
         
+        
+
+          
         }
+   
         
       }
 
+ 
   
     // Time to check for a win by calling the checkForWin function :) 
     // const checkResult = () => {
@@ -65,11 +79,10 @@ cells.forEach((cell) => {
     //     checkWinner ()
     checkForWinHorizontal (cells[0], cells[1], cells[2]),
     checkForWinHorizontal (cells[3], cells[4], cells[5])
+  
     
   });
 
-  
-   
 
 //winning patterns
 const checkForWinHorizontal = (pattern0, pattern1, pattern2) => {
